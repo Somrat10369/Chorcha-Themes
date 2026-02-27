@@ -1,0 +1,1361 @@
+	/* ==UserStyle==
+@name        	Mocha Mousse
+@namespace      github.com/openstyles/stylus
+@version        1.0.0
+@description  	The "Color of the Year" style for 2025/2026. It replaces cold grays with rich, chocolatey tones. To keep it from looking washed out, we use a very dark "Espresso" base.
+@author         Somrat_10369
+==/UserStyle== */
+	@-moz-document domain("chorcha.net") {
+	  :root {
+	    --bg: #1a0f0a;
+	    /* Dark Espresso */
+	    --sidebar: #261914;
+	    /* Roasted Bean */
+	    --card: #3c2a21;
+	    /* Mocha Cream */
+	    --text: #f5ebe0;
+	    /* Steamed Milk */
+	    --comment: #8e7d72;
+	    /* Muted Cocoa */
+	    --accent: #d4a373;
+	    /* Golden Caramel */
+	    --pink: #a98467;
+	    /* Soft Latte */
+	    --green: #adc178;
+	    /* Matcha Green */
+	    --red: #6b3e2e;
+	    /* Dark Cherry Mocha */
+	  }
+
+
+
+
+
+	  /* GLOBAL RESET */
+	  body,
+	  html,
+	  main,
+	  [class*="bg-background"] {
+	    background-color: var(--bg) !important;
+	    color: var(--text) !important;
+	  }
+
+	  .relative.cursor-pointer.h-8.w-16.p-1.rounded-full {
+	    display: none !important;
+	  }
+
+
+	  /* SIDEBAR & NAVIGATION */
+	  aside,
+	  [class*="border-r"] {
+	    background-color: var(--sidebar) !important;
+	    border: solid !important;
+	    border-color: var(--comment) !important;
+	  }
+
+	  /* Sidebar Active State (Purple) */
+	  [class*="bg-primary/10"],
+	  [class*="text-primary"],
+	  a[aria-current="page"] {
+	    background-color: rgba(189, 147, 249, 0.15) !important;
+	    color: var(--accent) !important;
+	  }
+
+	  /* CARDS & PANELS */
+	  [class*="bg-card"],
+	  .card,
+	  [class*="rounded-xl"] {
+	    background-color: var(--card) !important;
+	    border: 2px solid var(--comment) !important;
+	  }
+
+	  /* All rows inside the leaderboard body */
+	  tbody div.flex.justify-between.p-3 {
+	    background-color: var(--card) !important;
+	  }
+
+	  /* User Names */
+	  tbody h2.text-sm {
+	    color: var(--text) !important;
+	  }
+
+	  /* Points Text */
+	  tbody p.text-sm {
+	    color: #9ca3af !important;
+	    /* Soft gray */
+	  }
+
+	  div.border-t:has(> table.w-full) {
+	    border-top: none !important;
+	    border-width: 0 !important;
+	    border-color: transparent !important;
+	    box-shadow: none !important;
+	  }
+
+
+
+	  /* HEADINGS - Force Purple */
+	  h1,
+	  h2,
+	  h3,
+	  [class*="text-3xl"],
+	  [class*="font-bold"] {
+	    color: var(--accent) !important;
+	  }
+
+	  /* Remove borders from the header and its internal parts */
+	  .bg-theme-light,
+	  .bg-theme-dark,
+	  .container.top-16,
+	  [class*="border-"] {
+	    background-color: var(--bg) !important;
+	    border: none !important;
+	    border-color: transparent !important;
+	    box-shadow: none !important;
+	    /* Removes "line" shadows */
+	  }
+
+	  /* Specifically target the search input if it has a focus ring */
+	  #search {
+	    border: none !important;
+	    outline: none !important;
+	  }
+
+	  header.app\:hidden.lg\:hidden {
+	    background-color: var(--card) !important;
+	  }
+
+	  /* Select the link buttons */
+	  .card-btn {
+	    background-color: var(--card) !important;
+	    /* Dark blue background */
+	  }
+
+	  div.flex.justify-between.items-center.pt-6.px-6.pb-2 {
+	    background-color: var(--card) !important;
+	    border-radius: 12px 12px 0 0 !important;
+	  }
+
+
+	  /* Target the card that contains the leaderboard link */
+	  .card-big:has(a[href="/leaderboard"]) {
+	    background-color: var(--card) !important;
+	  }
+
+	  /* Style only the Subject Report (and other cards) */
+	  .card-big:not(:has(a[href="/leaderboard"])) {
+	    background-color: var(--card) !important;
+	  }
+
+	  /* Target the subject row container */
+	  .card-big .border-t.border-l.border-r.rounded-2xl {
+	    background-color: var(--bg) !important;
+	    /* Or a hex color like #1e2235 */
+	  }
+
+
+
+
+	  /* BUTTONS - Purple Background, Dark Text */
+	  [class*="bg-primary"],
+	  .btn-primary,
+	  button[type="submit"] {
+	    background-color: var(--accent) !important;
+	    color: var(--bg) !important;
+	    font-weight: bold !important;
+	  }
+
+	  button.cursor-pointer>p.text-base {
+	    color: var(--card) !important;
+	    /* Example style */
+	  }
+
+	  /* The 'প্র্যাকটিস' Text */
+	  button.btn-primary.w-26 span {
+	    color: var(--bg) !important
+	  }
+
+	  /* Target the button container and the buttons themselves */
+	  .flex.overflow-x-auto button.rounded-full {
+	    background-color: var(--card) !important;
+	    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+	    color: #efefef !important;
+	    padding: 6px 16px !important;
+	    margin-left: 8px !important;
+	    /* Fixes the ml-10 if it's too wide */
+	    transition: all 0.2s ease !important;
+	  }
+
+	  /* Style the button text */
+	  .flex.overflow-x-auto button span.truncate {
+	    font-weight: 600 !important;
+	    color: #ffffff !important;
+	  }
+
+	  /* The small number badge inside the pill */
+	  .flex.overflow-x-auto button span.rounded-full.bg-brand-light {
+	    background-color: var(--primary) !important;
+	    color: white !important;
+	    font-size: 11px !important;
+	    padding: 2px 8px !important;
+	    min-width: 24px !important;
+	  }
+
+	  /* Highlight the active sub-button or category */
+	  .flex.overflow-x-auto button[class*="active"],
+	  .flex.overflow-x-auto button.bg-primary,
+	  .flex.overflow-x-auto button.dark\:bg-primary {
+	    background-color: var(--primary) !important;
+	    border-color: var(--primary) !important;
+	  }
+
+	  .flex.overflow-x-auto button[class*="active"] span {
+	    color: white !important;
+	  }
+
+	  .flex.items-center.overflow-x-auto {
+	    cursor: default !important;
+	  }
+
+	  .flex.overflow-x-auto {
+	    scrollbar-width: thin !important;
+	    scrollbar-color: var(--primary) transparent !important;
+	  }
+
+	  /* Style the "Board" (বোর্ড) Button background */
+	  button.flex.items-center.px-4.py-1.border.rounded-full {
+	    background-color: var(--card) !important;
+	    border-color: rgba(255, 255, 255, 0.1) !important;
+	    color: #efefef !important;
+	  }
+
+	  /* Style the little Square Checkbox inside the button */
+	  button span.w-4.h-4.mr-2.border {
+	    background-color: rgba(255, 255, 255, 0.05) !important;
+	    border-color: var(--primary) !important;
+	    /* Makes the box match  theme */
+	    border-radius: 4px !important;
+	  }
+
+	  /* Style when the button is "Active" (Selected) */
+	  button.flex.items-center.px-4.py-1.border[class*="active"],
+	  button.flex.items-center.px-4.py-1.border[class*="bg-primary"] {
+	    background-color: var(--primary) !important;
+	    color: white !important;
+	  }
+
+	  /* Remove the gradient overlay completely */
+	  div.absolute.right-0.top-0.bottom-0.w-8.bg-gradient-to-l {
+	    display: none !important;
+	    opacity: 0 !important;
+	    pointer-events: none !important;
+	    width: 0 !important;
+	  }
+
+	  /* Add breathing room to the end of the scroll list */
+	  .flex.items-center.space-x-2.overflow-x-auto {
+	    padding-right: 40px !important;
+	    scrollbar-width: none !important;
+	    /* Keeps it clean */
+	  }
+
+	  /* Target the explanation/answer card */
+	  div.card-bekkha,
+	  div.bg-secondary.p-4.rounded-lg.card-bekkha {
+	    background-color: var(--card) !important;
+	    /* Or use a subtle tint like rgba(16, 185, 129, 0.1) */
+	    border-left: 5px solid var(--primary) !important;
+	    /* Adds a themed accent line on the left */
+	    color: #efefef !important;
+	    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+	    margin-bottom: 15px !important;
+	  }
+
+	  /* Style the Bengali text inside the answer box */
+	  .card-bekkha p {
+	    font-size: 1.15rem !important;
+	    /* text-lg equivalent */
+	    line-height: 1.8 !important;
+	    font-weight: 500 !important;
+	  }
+
+	  /* WRONG ANSWER BUBBLE */
+	  button.bg-\[\#FA0C211A\] {
+	    background-color: rgba(220, 38, 38, 0.15) !important;
+	    /* Brighter Red Tint */
+	    border: 2px solid #ef4444 !important;
+	    /* Thick Red Border */
+	    box-shadow: 0 0 10px rgba(239, 68, 68, 0.2) !important;
+	  }
+
+	  /* The Circle Icon (ক, খ, etc.) for Wrong Answer */
+	  button.bg-\[\#FA0C211A\] span.bg-\[\#BE0B0B\] {
+	    background-color: #ef4444 !important;
+	    border-color: #b91c1c !important;
+	    color: white !important;
+	    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3) !important;
+	  }
+
+	  /* CORRECT ANSWER BUBBLE */
+	  button.bg-\[\#017A471A\] {
+	    background-color: rgba(16, 185, 129, 0.15) !important;
+	    /* Brighter Green Tint */
+	    border: 2px solid #10b981 !important;
+	    /* Thick Green Border */
+	    box-shadow: 0 0 10px rgba(16, 185, 129, 0.2) !important;
+	  }
+
+	  /* The Circle Icon (ঘ, etc.) for Correct Answer */
+	  button.bg-\[\#017A471A\] span.bg-\[\#017A47\] {
+	    background-color: #10b981 !important;
+	    border-color: #065f46 !important;
+	    color: white !important;
+	    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3) !important;
+	  }
+
+	  /* Main AI Explanation Container */
+	  div.mt-4.p-4.rounded-2xl.bg-\[rgba\(1\, 122\, 71\, 0\.1\)\],
+	  div.mt-4.p-4.rounded-2xl.dark\:bg-\[rgba\(1\, 106\, 62\, 0\.3\)\] {
+	    background-color: var(--card) !important;
+	    border: 1px solid var(--primary) !important;
+	    /* Themed border instead of dark green */
+	    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
+	  }
+
+	  /* Header bar (The line under "AI Explanation") */
+	  div.flex.items-center.gap-2.pb-2.border-b {
+	    border-bottom-color: rgba(255, 255, 255, 0.1) !important;
+	  }
+
+	  /* AI Explanation Title Text */
+	  p.font-bold.text-\[\#004F2E\],
+	  p.font-bold.dark\:text-white {
+	    color: var(--primary) !important;
+	    font-size: 1.1rem !important;
+	  }
+
+	  /* Icon buttons at the bottom of AI box */
+	  button.p-1.rounded-full.border.dark\:border-\[\#017A47\] {
+	    background-color: rgba(255, 255, 255, 0.05) !important;
+	    border-color: rgba(255, 255, 255, 0.1) !important;
+	    color: #9ca3af !important;
+	  }
+
+	  button.p-1.rounded-full:hover {
+	    background-color: var(--primary) !important;
+	    color: white !important;
+	    border-color: var(--primary) !important;
+	  }
+
+	  div.inline-flex.items-center.gap-2.rounded-xl.dark\:bg-\[rgba\(1\, 122\, 71\, 0\.3\)\] {
+	    background-color: rgba(255, 255, 255, 0.05) !important;
+	    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+	    color: #6b7280 !important;
+	    /* Subdued color for disclaimer */
+	  }
+
+	  div.inline-flex.items-center.gap-2 span {
+	    color: inherit !important;
+	  }
+
+
+	  /* Completely hide the 'Upgrade to Unlock' message if it's annoying */
+	  div:has(> a[href="/upgrade"]) {
+	    display: none !important;
+	  }
+
+	  /* Target the title text 'AI Explanation' */
+	  p.font-bold.text-\[\#004F2E\],
+	  p.font-bold.dark\:text-white {
+	    color: var(--primary) !important;
+	    /* Changes black/dark green to  brand color */
+	    filter: brightness(1.2);
+	    /* Optional: makes it slightly punchier */
+	  }
+
+
+	  /* Target the Star Icon SVG */
+	  svg.text-\[\#004F2E\],
+	  svg.dark\:text-white {
+	    color: var(--primary) !important;
+	    fill: var(--primary) !important;
+	    /* Ensures the star is filled with the theme color */
+	  }
+
+	  /* Target the title bar container specifically */
+	  div.flex.items-center.gap-2.pb-2.border-b {
+	    background-color: transparent !important;
+	    /* Removes the black/dark-green strip */
+	    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+	    /* Cleaner divider */
+	    padding-top: 5px;
+	    padding-bottom: 10px;
+	  }
+
+	  /* Ensure the parent container isn't forcing a dark background */
+	  div.mt-4.p-4.rounded-2xl:has(> .flex.items-center.gap-2.pb-2.border-b) {
+	    background-color: var(--card) !important;
+	  }
+
+	  /* QUICK PRACTICE BUTTON */
+	  button.border-\[\#FDDAB7\] {
+	    background-color: rgba(253, 218, 183, 0.1) !important;
+	    /* Subtle tint */
+	    border: 2px solid #f59e0b !important;
+	    /* Solid Amber/Orange border */
+	    color: #f59e0b !important;
+	    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.15) !important;
+	  }
+
+	  /* Make the text/icon inside pop */
+	  button.border-\[\#FDDAB7\] div {
+	    color: #ffffff !important;
+	    font-size: 1.2rem !important;
+	  }
+
+	  /* BATTLE BUTTON */
+	  button.border-\[\#E1C1F9\] {
+	    background-color: rgba(225, 193, 249, 0.1) !important;
+	    /* Subtle tint */
+	    border: 2px solid #a855f7 !important;
+	    /* Solid Purple border */
+	    color: #a855f7 !important;
+	    box-shadow: 0 4px 15px rgba(168, 85, 247, 0.15) !important;
+	  }
+
+	  /* Make the text/icon inside pop */
+	  button.border-\[\#E1C1F9\] div {
+	    color: #ffffff !important;
+	    font-size: 1.2rem !important;
+	  }
+
+	  /* Selected/Correct Option */
+	  button.bg-\[\#d9f99d\],
+	  button.dark\:bg-green-500\/30 {
+	    background-color: rgba(16, 185, 129, 0.2) !important;
+	    /* Brighter Emerald tint */
+	    border: 2px solid #10b981 !important;
+	    /* Solid green border */
+	    box-shadow: 0 0 12px rgba(16, 185, 129, 0.2) !important;
+	  }
+
+	  /* Ensure the text inside the green button is bright */
+	  button.dark\:bg-green-500\/30 p {
+	    color: #ffffff !important;
+	    font-weight: 600 !important;
+	  }
+
+	  /* INCORRECT OPTION (Red highlight) */
+	  button[class*="bg-red-"],
+	  button[class*="dark:bg-red-500"],
+	  button.bg-\[\#fecaca\] {
+	    /* Common Tailwind red hex */
+	    background-color: rgba(239, 68, 68, 0.15) !important;
+	    border: 2px solid #ef4444 !important;
+	    box-shadow: 0 0 8px rgba(239, 68, 68, 0.2) !important;
+	  }
+
+	  /* Ensure text inside the red button is bright */
+	  button[class*="bg-red-"] p {
+	    color: #ffffff !important;
+	    font-weight: 600 !important;
+	  }
+
+	  /* 1. Target the Explanation Box (The Green Block) */
+	  div.p-3.rounded-2xl.dark\:bg-green-700\/50,
+	  div.p-3.rounded-2xl.bg-green-200\/75 {
+	    background-color: var(--card) !important;
+	    /* Forces  theme background */
+	    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+	    /* Neutral border */
+	    border-left: 5px solid var(--primary) !important;
+	    /* Themed accent line */
+	    /* KILL THE GREEN SHADOW/GLOW */
+	    box-shadow: none !important;
+	    --tw-shadow: 0 0 #0000 !important;
+	    --tw-ring-offset-shadow: 0 0 #0000 !important;
+	    --tw-ring-shadow: 0 0 #0000 !important;
+	  }
+
+	  /* 2. Fix the text inside so it isn't green-tinted */
+	  div.p-3.rounded-2xl.dark\:bg-green-700\/50 p,
+	  div.p-3.rounded-2xl.dark\:bg-green-700\/50 li {
+	    color: #efefef !important;
+	    /* Bright off-white */
+	  }
+
+	  /* 3. Style the bold terms to match  theme instead of green */
+	  div.p-3.rounded-2xl.dark\:bg-green-700\/50 strong {
+	    color: var(--primary) !important;
+	    font-weight: 700 !important;
+	  }
+
+	  /* Remove the hardcoded yellow, green, and blue backgrounds */
+	  .grid-cols-3 .rounded-xl.overflow-hidden {
+	    background-color: var(--card) !important;
+	    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+	    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2) !important;
+	  }
+
+	  /* Give each box a themed accent top-border instead of a full color fill */
+	  .grid-cols-3 .bg-\[\#eab308\],
+	  .grid-cols-3 .dark\:bg-\[\#a16207\] {
+	    border-top: 3px solid #eab308 !important;
+	  }
+
+	  /* Points: Yellow */
+	  .grid-cols-3 .bg-\[\#10b981\],
+	  .grid-cols-3 .dark\:bg-\[\#047857\] {
+	    border-top: 3px solid #10b981 !important;
+	  }
+
+	  /* Accuracy: Green */
+	  .grid-cols-3 .bg-\[\#2AAAD7\] {
+	    border-top: 3px solid #2aaad7 !important;
+	  }
+
+	  /* Time: Blue */
+	  .grid-cols-3 .text-center.my-1.text-white {
+	    color: #9ca3af !important;
+	    /* Soft gray for the label */
+	    font-size: 11px !important;
+	    text-transform: uppercase;
+	    letter-spacing: 0.5px;
+	  }
+
+	  /* The inner white/gray box holding the numbers */
+	  .grid-cols-3 .rounded-xl.py-4.bg-white,
+	  .grid-cols-3 .dark\:bg-gray-900 {
+	    background-color: var(--bg) !important;
+	    margin: 2px !important;
+	    /* Creates a clean 'inset' look */
+	  }
+
+	  /* The actual numbers (9, 100%, 20 Seconds) */
+	  .grid-cols-3 .text-md.font-bold {
+	    color: #ffffff !important;
+	    font-size: 1.1rem !important;
+	  }
+
+	  .grid-cols-3 img {
+	    filter: brightness(1.2) drop-shadow(0 0 2px rgba(0, 0, 0, 0.5)) !important;
+	    width: 20px !important;
+	  }
+
+	  /* Target the Next/Proceed button */
+	  button.btn-3d-primary {
+	    background-color: var(--primary) !important;
+	    color: var(--text) !important;
+	    border-radius: 12px !important;
+	    font-weight: 700 !important;
+	    font-size: 1.15rem !important;
+	    /* text-lg */
+	    /* Handle the 3D 'Bottom Line' */
+	    border: none !important;
+	    border-bottom: 4px solid rgba(0, 0, 0, 0.2) !important;
+	    /* Subtle dark bottom shadow */
+	    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3) !important;
+
+	    transition: all 0.1s ease !important;
+	  }
+
+	  button.btn-3d-primary:active {
+	    transform: translateY(2px) !important;
+	    /* Moves down 2px */
+	    border-bottom-width: 2px !important;
+	    /* Thins the bottom line */
+	    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2) !important;
+	  }
+
+	  button.btn-3d-primary {
+	    --tw-shadow: 0 0 #0000 !important;
+	    --tw-ring-color: transparent !important;
+	  }
+
+	  button.btn-3d-primary {
+	    animation: themedPulse 2s infinite;
+	  }
+
+	  @keyframes themedPulse {
+	    0% {
+	      box-shadow: 0 0 0 0 rgba(var(--primary-rgb), 0.4);
+	    }
+
+	    70% {
+	      box-shadow: 0 0 0 10px rgba(var(--primary-rgb), 0);
+	    }
+
+	    100% {
+	      box-shadow: 0 0 0 0 rgba(var(--primary-rgb), 0);
+	    }
+	  }
+
+	  section[data-section="প্রতিষ্ঠান ভিত্তিক"] {
+	    background-color: var(--bg) !important;
+	    color: var(--text) !important;
+	    border: solid
+	  }
+
+	  section[data-section="বিষয় ভিত্তিক"] {
+	    background-color: var(--bg) !important;
+	    color: var(--text) !important;
+	    border: solid
+	  }
+
+	  /* Target by the specific data attribute to be precise */
+	  button[data-event="Start_Exam_btn_live"] {
+	    background-color: var(--card) !important;
+	  }
+
+	  button[data-event="Start_Exam_btn_live"]:hover {
+	    transform: none;
+	    transition: none !important;
+	  }
+
+	  button[data-event="Start_Exam_btn_live"]:active {
+	    transform: none;
+	    /* "Pressed" effect */
+	  }
+
+	  /* chrocha commjunity*/
+	  /* The main container */
+	  .feed-card {
+	    background-color: var(--card) !important;
+	    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+	    border-radius: 16px !important;
+	  }
+
+	  /* The Title */
+	  .feed-card h2 {
+	    color: #ffffff !important;
+	    font-size: 1.25rem !important;
+	    font-weight: 700 !important;
+	  }
+
+	  /* The Notification Bell icon */
+	  .feed-card button svg.text-2xl {
+	    color: var(--primary) !important;
+	  }
+
+	  /* Target the dropdown buttons */
+	  .feed-card button[aria-haspopup="listbox"] {
+	    background-color: var(--bg) !important;
+	    border-color: rgba(255, 255, 255, 0.1) !important;
+	    border-radius: 10px !important;
+	  }
+
+	  /* The "Select Subject" placeholder text */
+	  .feed-card button[aria-haspopup="listbox"] span.text-gray-400 {
+	    color: #9ca3af !important;
+	    font-weight: 500 !important;
+	  }
+
+	  /* The dropdown arrow */
+	  .feed-card button[aria-haspopup="listbox"] svg {
+	    color: var(--primary) !important;
+	  }
+
+	  /* The Disabled State (before selecting subject/chapter) */
+	  .feed-card button.next-btn-disable {
+	    background-color: #334155 !important;
+	    /* Dark Slate */
+	    color: #64748b !important;
+	    opacity: 0.6 !important;
+	    border: none !important;
+	    cursor: not-allowed !important;
+	  }
+
+	  /* When the button becomes active (assuming it loses the disable class) */
+	  .feed-card button.btn:not(.next-btn-disable) {
+	    background-color: var(--primary) !important;
+	    color: white !important;
+	    font-weight: 700 !important;
+	    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3) !important;
+	  }
+
+	  .feed-card button:focus {
+	    outline: none !important;
+	    border-color: var(--primary) !important;
+	    box-shadow: 0 0 0 2px var(--primary) !important;
+	    background-color: var(--bg) !important;
+	  }
+
+	  /* Targets both the Start Exam button and the View Question link */
+	  .btn-primary,
+	  .btn-secondary,
+	  button[data-event="Start_Exam_btn_live"],
+	  a[data-event="live_read"] {
+	    border-bottom: none !important;
+	    box-shadow: none !important;
+	    border-width: 0 !important;
+	  }
+
+
+	  /* Style the text inside the span */
+	  button[data-event="Start_Exam_btn_live"] span {
+	    font-size: 1.1rem !important;
+	  }
+
+
+	  /* PROGRESS BARS & SUCCESS */
+	  [class*="bg-success"],
+	  [class*="bg-emerald"] {
+	    background-color: var(--green) !important;
+	  }
+
+	  /* STREAK/DANGER - Pink for high contrast */
+	  [class*="text-destructive"],
+	  [class*="bg-destructive/10"] {
+	    color: var(--pink) !important;
+	    background-color: rgba(255, 121, 198, 0.1) !important;
+	  }
+
+	  /* Target the AI Tab Header */
+	  .flex.justify-between.items-center.px-4.h-16 {
+	    background-color: var(--bg) !important;
+	    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+	  }
+
+	  /* Target the parent container of the AI interface */
+	  div:has(> .flex.justify-between.items-center.px-4.h-16) {
+	    background-color: var(--bg) !important;
+	  }
+
+	  /* 1. Style the Date Headers (e.g., 2026-02-27) */
+	  .mb-6 span.text-sm.text-gray-400 {
+	    display: block;
+	    margin-bottom: 8px !important;
+	    font-weight: bold !important;
+	    color: var(--primary) !important;
+	    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+	    padding-bottom: 4px;
+	  }
+
+	  /* 2. Style the Selected/Active Chat */
+	  .sidebar-tab-active {
+	    background-color: var(--primary) !important;
+	    color: #ffffff !important;
+	    border-radius: 8px !important;
+	    margin-bottom: 4px !important;
+	    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+	  }
+
+	  /* 3. Style all other Chat buttons (Inactive) - FIXED for Overflow */
+	  .sidebar-tab-inactive {
+	    background-color: var(--card) !important;
+	    color: #cccccc !important;
+	    border-radius: 8px !important;
+	    margin-bottom: 6px !important;
+	    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+
+	    /* Layout Fixes */
+	    display: block !important;
+	    width: 100% !important;
+	    text-align: left !important;
+	    height: auto !important;
+	    /* Allows button to grow */
+	    padding: 10px 12px !important;
+	  }
+
+	  /* 4. Improve Text Visibility & Wrap Logic */
+	  .sidebar-tab-active span,
+	  .sidebar-tab-inactive span {
+	    /* Kill the ellipsis (...) and wrap text */
+	    white-space: normal !important;
+	    overflow: visible !important;
+	    text-overflow: clip !important;
+	    display: block !important;
+
+	    /* Better reading */
+	    line-height: 1.4 !important;
+	    max-width: 100% !important;
+	    word-break: break-word !important;
+	    /* Prevents long words from breaking layout */
+	  }
+
+
+	  /* 5. Subtle separation for the Date Groups */
+	  .mb-6 {
+	    margin-bottom: 24px !important;
+	    /* Space between different days */
+	    padding: 10px;
+	    background: rgba(0, 0, 0, 0.1);
+	    /* Subtle grouping effect */
+	    border-radius: 12px;
+	  }
+
+	  /*  message bubble */
+	  [data-role="user-message"] .rounded-2xl {
+	    background-color: var(--primary) !important;
+	    color: white !important;
+	    border-radius: 18px 18px 2px 18px !important;
+	    /* Sharp corner on bottom-right */
+	    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2) !important;
+	  }
+
+	  /* Ensure markdown text inside  bubble is white */
+	  [data-role="user-message"] .wmde-markdown {
+	    color: white !important;
+	    font-size: 16px !important;
+	  }
+
+	  /* AI message bubble (the div following the avatar) */
+	  .flex.items-center.space-x-4+.flex-1 .py-1 {
+	    background-color: var(--card) !important;
+	    color: #efefef !important;
+	    padding: 15px !important;
+	    border-radius: 18px 18px 18px 2px !important;
+	    /* Sharp corner on bottom-left */
+	    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+	  }
+
+	  /* AI Avatar border */
+	  img[alt="AI"] {
+	    border: 2px solid var(--primary) !important;
+	  }
+
+	  /* The main form container */
+	  form.max-w-4xl {
+	    background-color: var(--card) !important;
+	    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+	    border-radius: 24px !important;
+	  }
+
+	  /* The textarea where you type */
+	  textarea[name="q"] {
+	    color: white !important;
+	    font-size: 16px !important;
+	    background: transparent !important;
+	  }
+
+	  /* Style the Subject Select dropdown */
+	  #subject-select {
+	    background-color: var(--bg) !important;
+	    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+	    color: white !important;
+	    border-radius: 8px !important;
+	  }
+
+	  .bg-gray-100,
+	  .dark\:bg-gray-700 {
+	    background-color: rgba(255, 255, 255, 0.05) !important;
+	    border: 1px dashed var(--primary) !important;
+	    color: var(--primary) !important;
+	  }
+
+	  /* Target the spacer divs you shared */
+	  div.mx-1\.5.mb-6 {
+	    background-color: transparent !important;
+	    /* Removes the black fill */
+	    margin-bottom: 8px !important;
+	    /* Shrinks the gap */
+	    border: none !important;
+	    box-shadow: none !important;
+	  }
+
+	  /* Target the inner gray/black boxes (like Time Breakdown) */
+	  .p-2\.5.cursor-pointer.bg-gray-100,
+	  .dark\:bg-gray-700 {
+	    background-color: var(--card) !important;
+	    /* Match  card color */
+	    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+	    color: var(--primary) !important;
+	    /* Make the text pop with  brand color */
+	    border-radius: 12px !important;
+	    font-size: 14px !important;
+	    text-align: justify-all;
+	  }
+
+	  /* Style the Like/Copy buttons and the Subject tag */
+	  button[title="Like"],
+	  button[title="Copy"],
+	  div.border.rounded-full.text-md {
+	    background-color: var(--card) !important;
+	    border-color: rgba(255, 255, 255, 0.2) !important;
+	    color: #9ca3af !important;
+	    /* Light gray icon color */
+	  }
+
+	  /* Change icon color on hover */
+	  button[title="Like"]:hover svg,
+	  button[title="Copy"]:hover svg {
+	    color: var(--primary) !important;
+	  }
+
+	  /* The main chat scroll area */
+	  div.max-w-4xl.w-full.mx-auto.flex-1 {
+	    background-color: var(--bg) !important;
+	  }
+
+	  /* The outer wrapper that was mt-16 mb-36 */
+	  div.md\:p-4.py-2.pb-0.mb-36.mt-16 {
+	    background-color: var(--bg) !important;
+	  }
+
+	  /*Chorcha leader board */
+	  /* Target the scrolling container */
+	  div.flex.items-center.scroll-smooth.no-scrollbar {
+	    padding-left: 0 !important;
+	    padding-right: 0 !important;
+	    justify-content: center !important;
+	    /* Centers the ranks on the screen */
+	    gap: 30px !important;
+	    /* Better spacing */
+	    margin: 20px 0;
+	  }
+
+	  /* The container for each user row */
+	  .infinite-scroll-component>div>div.flex.justify-between {
+	    background-color: var(--card) !important;
+	    margin-bottom: 8px !important;
+	    border-radius: 12px !important;
+	    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+	    transition: transform 0.2s ease !important;
+	  }
+
+	  /* Add a subtle hover effect to individual users */
+	  .infinite-scroll-component>div>div.flex.justify-between:hover {
+	    background-color: rgba(255, 255, 255, 0.05) !important;
+	    transform: translateX(5px);
+	  }
+
+	  /* The Points Text */
+	  .infinite-scroll-component p.text-sm.text-\[\#6B6B6B\] {
+	    color: var(--primary) !important;
+	    /* Brand color for the points */
+	    font-weight: 700 !important;
+	    opacity: 0.9;
+	  }
+
+	  .infinite-scroll-component {
+	    padding: 10px !important;
+	    background-color: var(--bg) !important;
+	    /* Ensure the floor is  theme bg */
+	  }
+
+	  /* All trophy buttons */
+	  button[data-id] {
+	    filter: grayscale(1) opacity(0.5);
+	    /* Makes them look locked/inactive */
+	    transition: all 0.3s ease-in-out !important;
+	  }
+
+	  /* Hover effect to see colors */
+	  button[data-id]:hover {
+	    filter: grayscale(0) opacity(1);
+	    transform: translateY(-5px) !important;
+	  }
+
+	  /* Target the larger (active) trophy */
+	  button[data-id] img[class*="w-[72px]"] {
+	    filter: drop-shadow(0 0 12px var(--primary)) grayscale(0) !important;
+	    transform: scale(1.1);
+	  }
+
+	  /* Force the active button to full opacity */
+	  button:has(img[class*="w-[72px]"]) {
+	    filter: grayscale(0) opacity(1) !important;
+	  }
+
+	  .overflow-x-auto::-webkit-scrollbar {
+	    height: 5px !important;
+	  }
+
+	  .overflow-x-auto::-webkit-scrollbar-thumb {
+	    background-color: var(--primary) !important;
+	    border-radius: 4px;
+	  }
+
+	  /* profile tracker*/
+	  /* --- INTEGRATED THEME CHART MODULE --- */
+	  /* 1. Reset Gradients to match Theme */
+	  /* This replaces the blue/gray fills with a soft glow of  primary color */
+	  linearGradient#youGradient stop,
+	  linearGradient#uyenGradient stop {
+	    stop-color: var(--accent) !important;
+	  }
+
+	  linearGradient#youGradient stop:first-child,
+	  linearGradient#uyenGradient stop:first-child {
+	    stop-opacity: 0.9 !important;
+	    /* Subtle glow under the line */
+	  }
+
+	  linearGradient#youGradient stop:last-child,
+	  linearGradient#uyenGradient stop:last-child {
+	    stop-opacity: 0.3 !important;
+	    /* Fades into the dark purple bg */
+	  }
+
+	  /* 2. The Main Trend Line */
+	  path.recharts-area-curve {
+	    stroke: var(--primary) !important;
+	    stroke-width: 3px !important;
+	    stroke-opacity: 0.3 !important;
+	    /* Adds a slight 'rim light' to separate it from the purple bg */
+	    filter: drop-shadow(0 0 3px var(--primary)) !important;
+	  }
+
+	  /* 3. The Data Points (Dots) - Minimalist Fix */
+	  /* We make them tiny and hollow so they aren't distracting */
+	  circle.recharts-area-dot {
+	    stroke: var(--primary) !important;
+	    fill: var(--bg) !important;
+	    /* Matches the purple background */
+	    stroke-width: 0 !important;
+	    r: 0 !important;
+	    /* Much smaller size */
+	    opacity: 0.8 !important;
+	  }
+
+	  /* 4. Axis Labels & Grid Visibility */
+	  /* Pure white text is the only way to read clearly on dark purple */
+	  text.recharts-cartesian-axis-tick-value {
+	    fill: var(--text) !important;
+	    font-weight: 500 !important;
+	    font-size: 12px !important;
+	  }
+
+	  /* Make grid lines very faint so they don't compete with the curve */
+	  .recharts-cartesian-grid line {
+	    stroke: rgba(255, 255, 255, 0.08) !important;
+	    stroke-dasharray: 4 4 !important;
+	  }
+
+	  /* Remove the solid outer L-frame */
+	  .recharts-cartesian-axis-line {
+	    stroke: transparent !important;
+	  }
+
+	  /* --- DASHBOARD STATS MODULE --- */
+	  /* 1. Unify Icon Colors */
+	  /* This overrides the hardcoded orange, purple, red, and green icons */
+	  .grid-cols-4 svg {
+	    color: var(--primary) !important;
+	    filter: drop-shadow(0 0 5px rgba(var(--primary-rgb), 0.3)) !important;
+	  }
+
+	  /* 2. Style the Numbers (৩৪১০.৮, ১, ৩১২, ৫৮) */
+	  .grid-cols-4 h2 {
+	    color: #ffffff !important;
+	    font-weight: 800 !important;
+	    letter-spacing: 0.5px !important;
+	  }
+
+	  /* 3. Style the Labels (পয়েন্ট, র‍্যাংক, পরীক্ষা, স্ট্রিক) */
+	  .grid-cols-4 p.text-gray-500 {
+	    color: #94a3b8 !important;
+	    /* Slate gray for readability on purple */
+	    font-weight: 500 !important;
+	    text-transform: uppercase !important;
+	    font-size: 10px !important;
+	  }
+
+	  /* 4. Fix Container Spacing */
+	  .grid-cols-4 {
+	    background-color: var(--card) !important;
+	    padding: 15px 10px !important;
+	    border-radius: 16px !important;
+	    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+	    margin-top: 10px !important;
+	  }
+
+	  /* 5. Mobile Optimization */
+	  @media (max-width: 768px) {
+	    .grid-cols-4 h2 {
+	      font-size: 14px !important;
+	      /* Makes the tiny 9px text readable */
+	    }
+
+	    .grid-cols-4 p {
+	      font-size: 8px !important;
+	    }
+	  }
+
+	  /* The outer scrolling wrapper */
+	  div.flex.dark\:bg-gray-800.rounded {
+	    background-color: transparent !important;
+	    padding: 5px 0 !important;
+	  }
+
+	  /* Add spacing between buttons */
+	  .scrollbar-hide.space-x-2>button {
+	    margin-right: 8px !important;
+	  }
+
+	  /* --- ACCURACY DONUT CHART: SOLID THEME FIX --- */
+	  /* 1. Fill the "Hole" in the middle */
+	  /* This targets the inner circle of the donut chart */
+	  svg circle.fill-white,
+	  svg circle.dark\:fill-gray-800 {
+	    fill: var(--card) !important;
+	    /* Matches  card background */
+	    stroke: rgba(255, 255, 255, 0.05) !important;
+	    /* Subtle inner ring */
+	    stroke-width: 1px;
+	  }
+
+	  /* 2. Style the Data Slices (The colors of the donut) */
+	  /* Correct (Green) */
+	  svg path[fill="#059669"] {
+	    fill: #10b981 !important;
+	    filter: drop-shadow(0 0 2px rgba(16, 185, 129, 0.3));
+	  }
+
+	  /* Wrong (Red) */
+	  svg path[fill="#E11D48"] {
+	    fill: #f43f5e !important;
+	  }
+
+	  /* Skipped (Yellow/Orange) */
+	  svg path[fill="#F59E0B"] {
+	    fill: #f59e0b !important;
+	  }
+
+	  /* 3. Center Text (If there is any number inside the circle) */
+	  svg text {
+	    fill: #ffffff !important;
+	    font-weight: bold !important;
+	  }
+
+	  /* 4. Fix the legend icons (The dots next to 'সঠিক', 'ভুল') */
+	  .rounded-full.bg-emerald-500 {
+	    background-color: #10b981 !important;
+	  }
+
+	  .rounded-full.bg-rose-500 {
+	    background-color: #f43f5e !important;
+	  }
+
+	  .rounded-full.bg-yellow-500 {
+	    background-color: #f59e0b !important;
+	  }
+
+	  /* --- SUBJECT FILTER PILLS: OUTER BOX FIX --- */
+	  /* 1. Target the outermost wrapper */
+	  /* Removes the black/dark-gray background from the entire filter row */
+	  div.flex.flex-row.my-3.dark\:bg-theme-dark {
+	    background-color: transparent !important;
+	  }
+
+	  /* 2. Target the inner scrolling container */
+	  /* Removes the 'muddy' gray box (dark:bg-gray-800) around the pills */
+	  div.overflow-x-hidden.flex.dark\:bg-gray-800 {
+	    background-color: transparent !important;
+	    border: none !important;
+	  }
+
+	  /* 3. Cleanup the inner relative wrapper */
+	  /* Ensures no background colors are inherited in the scroll area */
+	  div.relative.flex.overflow-x-auto.mx-2 {
+	    background-color: transparent !important;
+	  }
+
+	  /* 4. Optional: Add a subtle themed border to the row for separation */
+	  div.flex.flex-row.my-3.dark\:bg-theme-dark {
+	    border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+	    padding-bottom: 10px;
+	  }
+
+	  /* --- SUBJECT REPORT & ACCURACY MODULE --- */
+	  /* 1. Recolor the Accuracy Donut Chart (SVG) */
+	  /* Replaces the hardcoded Emerald, Yellow, and Rose with themed colors */
+	  svg circle.fill-white,
+	  svg circle.dark\:fill-gray-800 {
+	    fill: var(--card) !important;
+	    /* The center hole of the donut */
+	  }
+
+	  /* 2. Fix Progress Bar Track & Fill */
+	  /* The main progress bar (8.3%) and subject bars (31%, 1%, etc.) */
+	  .dark\:bg-stone-800,
+	  .bg-stone-200 {
+	    background-color: rgba(255, 255, 255, 0.05) !important;
+	    /* Darker track */
+	  }
+
+	  .bg-emerald-500 {
+	    background-color: var(--primary) !important;
+	    /* Themed fill */
+	    box-shadow: 0 0 8px rgba(var(--primary-rgb), 0.3);
+	  }
+
+	  /* 3. Style the Percentage "Bubble" (The 8.3% floating tag) */
+	  div.absolute.bg-emerald-600 {
+	    background-color: var(--primary) !important;
+	    border: 1px solid rgba(255, 255, 255, 0.2);
+	  }
+
+	  /* 4. Style Subject Row Cards (গদ্য, পদ্য, etc.) */
+	  /* This targets the nested boxes inside the report */
+	  .border-t.border-l.border-r.rounded-2xl {
+	    background-color: var(--card) !important;
+	    border-color: rgba(255, 255, 255, 0.1) !important;
+	  }
+
+	  /* 5. Style Accuracy Legend (সঠিক, ভুল, স্কিপড) */
+	  /* Keep colors but make them glowy */
+	  .bg-emerald-500 {
+	    background-color: #10b981 !important;
+	  }
+
+	  /* Correct - Green */
+	  .bg-rose-500 {
+	    background-color: #f43f5e !important;
+	  }
+
+	  /* Wrong - Red */
+	  .bg-yellow-500 {
+	    background-color: #f59e0b !important;
+	  }
+
+	  /* Skipped - Orange */
+	  .text-gray-500 {
+	    color: #94a3b8 !important;
+	    /* Muted label text */
+	  }
+
+	  /* 6. Clean up the Sidebar Container */
+	  .overflow-scroll.scrollbar-hide {
+	    background-color: var(--bg) !important;
+	  }
+
+	  .card {
+	    background-color: var(--card) !important;
+	    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+	    border-radius: 16px !important;
+	  }
+
+	  /* Profile card */
+	  /* --- PROFILE & SETTINGS REVAMP --- */
+	  /* 1. Kill the "Big Outside Borders" & Boxes */
+	  aside.sticky,
+	  .bg-\[\#FFFFFF\],
+	  .dark\:bg-\[\#191919\],
+	  .shadow-sm {
+	    background-color: transparent !important;
+	    border: none !important;
+	    box-shadow: none !important;
+	  }
+
+	  /* 2. Revamp the Main Profile Card */
+	  /* We turn the top section into a floating centerpiece */
+	  aside.sticky>div:first-child {
+	    background: linear-gradient(145deg, var(--card), rgba(var(--primary-rgb), 0.05)) !important;
+	    border-radius: 24px !important;
+	    padding: 30px !important;
+	    margin-bottom: 20px !important;
+	    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+	    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
+	  }
+
+	  /* 3. Re-imagine the Settings List */
+	  /* Instead of a connected list, each item is now a floating pill */
+	  div.cursor-pointer.p-4.border-b,
+	  a div.cursor-pointer.p-4 {
+	    background-color: var(--card) !important;
+	    border-radius: 16px !important;
+	    border: 1px solid rgba(255, 255, 255, 0.03) !important;
+	    margin-bottom: 10px !important;
+	    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+	    border-bottom: none !important;
+	    /* Kills the divider line */
+	  }
+
+	  /* 4. Interactive Hover (The 'Floating' Feel) */
+	  div.cursor-pointer.p-4:hover {
+	    background-color: rgba(var(--primary-rgb), 0.1) !important;
+
+	    transform: translateX(8px) !important;
+	  }
+
+	  /* 5. Icon & Text Modernization */
+	  /* Glow the icons and clean up text */
+	  .w-10.h-10.rounded-md {
+	    border-radius: 12px !important;
+	    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.2));
+	  }
+
+	  span.font-bold.text-gray-800.dark\:text-gray-100 {
+	    color: #ffffff !important;
+	    font-weight: 500 !important;
+	    /* Slightly thinner for modern look */
+	    letter-spacing: 0.3px;
+	  }
+
+	  /* 6. The Avatar Glow */
+	  div.relative.cursor-pointer.w-28.h-28 {
+	    filter: drop-shadow(0 0 15px rgba(var(--primary-rgb), 0.4));
+	  }
+
+	  /* 7. Hide the "Link Account" Section (Optional Cleanup) */
+	  /* This section often clutters the settings UI */
+	  div:has(> h3:contains("লিংক অ্যাকাউন্ট")) {
+	    opacity: 0.7;
+	    transform: scale(0.95);
+	  }
+
+	  /* --- REMOVE BLACK MB-6 STRIPES --- */
+	  /* 1. Target the 'mb-6' wrapper and the card inner */
+	  .mb-6,
+	  .bg-white.dark\:bg-\[\#191919\],
+	  .dark\:bg-\[\#191919\] {
+	    background: none !important;
+	    box-shadow: none !important;
+	    border: none !important;
+	  }
+
+	  /* 2. Remove the internal divider lines (The horizontal stripes) */
+	  .border-b.border-gray-200,
+	  .dark\:border-gray-700 {
+	    border-bottom: none !important;
+	  }
+
+	  /* 3. Re-apply  theme color ONLY to the individual buttons */
+	  /* This makes the options float cleanly on  purple background */
+	  .cursor-pointer.p-4.rounded-lg {
+	    background-color: var(--card) !important;
+	    margin-bottom: 8px !important;
+	    /* Adds space between "pills" */
+	    border-radius: 12px !important;
+	    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+	  }
+
+	  /* 4. Ensure the parent container is transparent */
+	  div.shadow-sm.rounded-xl.w-full {
+	    background: transparent !important;
+	  }
+
+	  /* TEXT OVERRIDES Fix */
+	  p,
+	  span,
+	  div,
+	  li,
+	  strong,
+	  a,
+	  label {
+	    color: var(--text) !important;
+	  }
+
+	  [class*="text-muted-foreground"] {
+	    color: var(--comment) !important;
+	  }
+
+	  /* SCROLLBAR */
+	  ::-webkit-scrollbar {
+	    width: 10px;
+	  }
+
+	  ::-webkit-scrollbar-track {
+	    background: var(--bg);
+	  }
+
+	  ::-webkit-scrollbar-thumb {
+	    background: var(--card);
+	    border-radius: 4px;
+	  }
+
+	  ::-webkit-scrollbar-thumb:hover {
+	    background: var(--accent);
+	  }
+	}
